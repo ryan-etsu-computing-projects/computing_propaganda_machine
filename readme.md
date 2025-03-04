@@ -2,6 +2,14 @@
 
 This project crawls the ETSU Computing department website, extracts content, and organizes it into a structured format that can be easily imported into LLMs for summarization or fact extraction. It's designed to help you prepare talking points for campus tours and keep track of the latest achievements, courses, student organizations, and other important information.
 
+## Features
+
+- **Smart Content Extraction**: Properly extracts content from complex web structures including accordion menus (`<details>` and `<summary>` elements), tables, and lists
+- **Path Restriction**: Stays within the Computing department by only crawling URLs with the `/cbat/computing` prefix
+- **Depth Control**: Limits crawling to specified levels deep from the starting page
+- **Content Organization**: Automatically categorizes extracted content by topic
+- **Key Facts Extraction**: Identifies potential talking points from the extracted content
+
 ## Project Structure
 
 The project consists of three main Python scripts:
@@ -45,13 +53,15 @@ This will:
 Control crawling behavior:
 
 ```bash
-python run.py --start-url https://www.etsu.edu/cbat/computing/ --max-pages 50 --delay 2.0 --max-depth 1
+python run.py --start-url https://www.etsu.edu/cbat/computing/ --max-pages 50 --delay 2.0 --max-depth 1 --path-prefix /cbat/computing
 ```
 
 The `--max-depth` parameter controls how many "hops" from the starting URL the crawler will follow:
 - `--max-depth 1` (default): Only crawls links found on the start page (main navigation links)
 - `--max-depth 2`: Crawls the main navigation links and links found on those pages
 - Higher values will crawl deeper into the site structure
+
+The `--path-prefix` parameter (default: `/cbat/computing`) restricts the crawler to only visit URLs that start with the given path. This prevents the crawler from navigating to other departments or colleges.
 
 Skip crawling and process existing content:
 

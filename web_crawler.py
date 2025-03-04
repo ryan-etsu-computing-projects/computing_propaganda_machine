@@ -8,7 +8,7 @@ import argparse
 from collections import deque
 
 class WebsiteCrawler:
-    def __init__(self, start_url, output_file, delay=1.0, max_pages=None, max_depth=None, respect_robots=True):
+    def __init__(self, start_url, output_file, delay=1.0, max_pages=None, max_depth=None, path_prefix=None, respect_robots=True):
         """
         Initialize the crawler with the starting URL and configuration.
         
@@ -18,6 +18,7 @@ class WebsiteCrawler:
             delay (float): Delay between requests in seconds
             max_pages (int, optional): Maximum number of pages to crawl
             max_depth (int, optional): Maximum depth to crawl (levels from start URL)
+            path_prefix (str, optional): Only crawl URLs with this path prefix
             respect_robots (bool): Whether to respect robots.txt
         """
         self.start_url = start_url
@@ -26,6 +27,7 @@ class WebsiteCrawler:
         self.delay = delay
         self.max_pages = max_pages
         self.max_depth = max_depth
+        self.path_prefix = path_prefix
         self.respect_robots = respect_robots
         
         # Sets to keep track of URLs
@@ -89,6 +91,10 @@ class WebsiteCrawler:
         if url in self.visited_urls:
             return False
         
+        # Check if URL path starts with the required prefix
+        if self.path_prefix and not parsed_url.path.startswith(self.path_prefix):
+            return False
+
         # Check file extensions to avoid PDFs, images, etc.
         if parsed_url.path.lower().endswith(('.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png', '.gif', '.css', '.js')):
             return False
@@ -99,40 +105,212 @@ class WebsiteCrawler:
         
         return True
     
+    def _process_text_node(self, element):
+        """Process a text node, removing extra whitespace"""
+        if element.string:
+            return element.string.strip()
+        return ""
+
+    def _process_element(self, element, indent=0):
+        """Process an HTML element and its children recursively to extract structured content"""
+        if element.name is None:
+            # This is a text node
+            text = self._process_text_node(element)
+            if text:
+                return text
+            return ""
+
+        # Skip script, style, and other non-content elements
+        if element.name in ['script', 'style', 'meta', 'link', 'noscript']:
+            return ""
+
+        # Skip site navigation and header elements
+        skip_classes = ['nav__global', 'nav__page', 'site-search-wrap', 'flyout-menu', 'header-primary', 'leftSidebar']
+        for cls in skip_classes:
+            if element.get('class') and cls in element.get('class'):
+                return ""
+
+        # Handle various HTML elements differently
+        if element.name == 'h1':
+            return f"\n# {element.get_text(strip=True)}\n\n"
+        elif element.name == 'h2':
+            return f"\n## {element.get_text(strip=True)}\n\n"
+        elif element.name == 'h3':
+            return f"\n### {element.get_text(strip=True)}\n\n"
+        elif element.name == 'h4':
+            return f"\n#### {element.get_text(strip=True)}\n\n"
+        elif element.name == 'h5':
+            return f"\n##### {element.get_text(strip=True)}\n\n"
+        elif element.name == 'h6':
+            return f"\n###### {element.get_text(strip=True)}\n\n"
+        elif element.name == 'p':
+            return f"{element.get_text(separator=' ', strip=True)}\n\n"
+        elif element.name == 'br':
+            return "\n"
+        elif element.name == 'hr':
+            return "\n---\n\n"
+        elif element.name == 'a' and element.has_attr('href'):
+            text = element.get_text(strip=True)
+            href = element['href']
+            if text:
+                return f"[{text}]({href})"
+            return ""
+        elif element.name in ['ul', 'ol']:
+            result = "\n"
+            for i, li in enumerate(element.find_all('li', recursive=False)):
+                li_text = ""
+                for child in li.children:
+                    li_text += self._process_element(child, indent)
+
+                if element.name == 'ol':
+                    result += f"{i+1}. {li_text.strip()}\n"
+                else:
+                    result += f"* {li_text.strip()}\n"
+            return result + "\n"
+        elif element.name == 'details':
+            # Special handling for accordion elements
+            summary = element.find('summary')
+            summary_text = summary.get_text(strip=True) if summary else "Accordion Item"
+
+            # Process all content inside the details tag, excluding the summary
+            content = ""
+            for child in element.children:
+                if child != summary:
+                    content += self._process_element(child, indent)
+
+            return f"\n### {summary_text}\n{content}\n"
+        elif element.name == 'summary':
+            # Skip summary elements as they're handled by the details processing
+            return ""
+        elif element.name == 'table':
+            # Enhanced table handling
+            result = "\n"
+
+            # First, handle table headers
+            headers = []
+            header_row = element.find('thead')
+            if header_row:
+                th_cells = header_row.find_all('th')
+                if th_cells:
+                    headers = [th.get_text(strip=True) for th in th_cells]
+
+            if not headers:
+                # Try to get headers from the first row
+                first_row = element.find('tr')
+                if first_row:
+                    th_cells = first_row.find_all('th')
+                    if th_cells:
+                        headers = [th.get_text(strip=True) for th in th_cells]
+
+            # If we found headers, add them to the table
+            if headers:
+                result += "| " + " | ".join(headers) + " |\n"
+                result += "| " + " | ".join(['---'] * len(headers)) + " |\n"
+
+            # Process rows
+            rows = element.find_all('tr')
+            for row in rows:
+                # Skip the header row if we already processed it
+                if row == element.find('tr') and headers and row.find('th'):
+                    continue
+
+                cells = row.find_all(['td', 'th'])
+                if cells:
+                    result += "| " + " | ".join(cell.get_text(strip=True) for cell in cells) + " |\n"
+
+            return result + "\n"
+        elif element.name == 'div':
+            # Process div content
+            result = ""
+            for child in element.children:
+                result += self._process_element(child, indent)
+            return result
+
+        # For other elements, process their children
+        result = ""
+        for child in element.children:
+            result += self._process_element(child, indent + 1)
+
+        return result
+
     def _extract_content(self, url, soup):
-        """Extract relevant content from the page"""
+        """Extract relevant content from the page using a structured approach"""
         # Title of the page
         title = soup.title.string if soup.title else "No Title"
         
-        # Get main content - adjust selectors according to the website's structure
-        # These are common selectors, but you may need to customize them
-        main_content_selectors = ['main', 'article', '.content', '#content', '.main-content']
+        # Get main content
         main_content = None
         
-        for selector in main_content_selectors:
-            content = soup.select(selector)
-            if content:
-                main_content = content[0]
+        # Try to find the main content area with various selectors, prioritizing more specific IDs/classes
+        content_selectors = [
+            '#main',  # Main content div on ETSU pages
+            'section[role="main"]',  # Main section with role=main
+            '#content',  # Content ID
+            '.content-grid',  # Content grid class
+            'main',  # HTML5 main tag
+            'article',  # Article tag
+            '.page-content',  # Page content class
+            '.main-content'  # Main content class
+        ]
+
+        for selector in content_selectors:
+            elements = soup.select(selector)
+            if elements:
+                main_content = elements[0]
                 break
         
         # If no main content was found, use the body
         if not main_content:
             main_content = soup.body
         
-        # Extract text, removing script and style elements
-        for script in main_content.find_all(['script', 'style']):
-            script.decompose()
+        # Remove navigation and sidebar elements that might be inside the main content
+        for nav in main_content.find_all(['nav', 'header', 'footer']):
+            nav.decompose()
         
-        # Get all text and clean it
-        text = main_content.get_text(separator="\n", strip=True)
-        
-        # Remove extra whitespace
-        text = re.sub(r'\n+', '\n\n', text)
+        # Check if there's an accordion list specifically (common on ETSU research pages)
+        accordion_lists = main_content.select('.list__accordions')
+
+        # Special handling if we found accordion lists
+        if accordion_lists:
+            structured_content = "# " + title + "\n\n"
+
+            for accordion_list in accordion_lists:
+                for details in accordion_list.find_all('details'):
+                    summary = details.find('summary')
+                    if summary:
+                        summary_text = summary.get_text(strip=True)
+                        structured_content += f"## {summary_text}\n\n"
+
+                        # Extract content from the div inside details
+                        content_div = details.find('div')
+                        if content_div:
+                            # Process paragraphs
+                            for p in content_div.find_all('p'):
+                                structured_content += f"{p.get_text(strip=True)}\n\n"
+
+                            # Process lists
+                            for ul in content_div.find_all('ul'):
+                                for li in ul.find_all('li'):
+                                    # Handle links in list items
+                                    if li.find('a'):
+                                        for a in li.find_all('a'):
+                                            href = a.get('href', '')
+                                            link_text = a.get_text(strip=True)
+                                            structured_content += f"* [{link_text}]({href})\n"
+                                    else:
+                                        structured_content += f"* {li.get_text(strip=True)}\n"
+                                structured_content += "\n"
+        else:
+            # Process the main content to extract structured text
+            structured_content = self._process_element(main_content)
+
+        # Clean up any excessive whitespace
+        structured_content = re.sub(r'\n{3,}', '\n\n', structured_content)
         
         return {
             'title': title,
             'url': url,
-            'content': text
+            'content': structured_content
         }
     
     def _extract_links(self, soup, current_url):
@@ -161,6 +339,8 @@ class WebsiteCrawler:
         print(f"Output will be saved to {self.output_file}")
         if self.max_depth is not None:
             print(f"Maximum crawl depth: {self.max_depth} levels from start URL")
+        if self.path_prefix:
+            print(f"Only crawling URLs with path prefix: {self.path_prefix}")
         
         while self.urls_to_visit and (self.max_pages is None or page_count < self.max_pages):
             # Get the next URL and its depth to visit
@@ -243,6 +423,8 @@ def main():
                         help='Maximum number of pages to crawl')
     parser.add_argument('--max-depth', type=int, default=None,
                         help='Maximum depth to crawl (1 = only links on start page)')
+    parser.add_argument('--path-prefix', type=str, default='/cbat/computing',
+                        help='Only crawl URLs with this path prefix')
     parser.add_argument('--no-robots', action='store_true',
                         help='Ignore robots.txt rules')
     
@@ -254,6 +436,7 @@ def main():
         delay=args.delay,
         max_pages=args.max_pages,
         max_depth=args.max_depth,
+        path_prefix=args.path_prefix,
         respect_robots=not args.no_robots
     )
     

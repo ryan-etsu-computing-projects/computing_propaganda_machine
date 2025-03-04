@@ -40,7 +40,7 @@ class ContentExtractor:
             "concentrations": ["concentration", "major", "minor", "specialization", "track", "degree", "program", "BS in", "MS in"],
             "student_organizations": ["club", "organization", "society", "association", "student group", "ACM", "student chapter"],
             "faculty": ["faculty", "professor", "instructor", "dean", "chair", "director", "Dr.", "Ph.D"],
-            "research": ["research", "publication", "journal", "conference", "study", "investigation", "project"],
+            "research": ["research", "thesis", "dissertation", "publication", "journal", "conference", "study", "investigation", "project", "honors college", "graduate studies", "independent studies", "library resources", "thesis preparation", "research honors"],
             "events": ["event", "seminar", "workshop", "conference", "hackathon", "competition", "meeting", "ceremony"],
             "facilities": ["lab", "laboratory", "classroom", "center", "building", "brinkley", "facility", "equipment"],
             "general_info": ["about", "mission", "vision", "contact", "location", "schedule", "deadline", "application"]
@@ -79,23 +79,47 @@ class ContentExtractor:
                 })
     
     def _categorize_content(self):
-        """Categorize content based on keywords"""
+        """Categorize content based on keywords and URL patterns"""
         for section in self.content_sections:
             categorized = False
             combined_text = f"{section['title']} {section['content']}".lower()
+            url = section['url'].lower()
 
-            # Check each category's keywords
-            for category, keywords in self.category_keywords.items():
-                for keyword in keywords:
-                    if keyword.lower() in combined_text:
+            # First check URL patterns which are more reliable indicators
+            url_patterns = {
+                "research": ["/research/", "honors-in-discipline", "gradschool/etd", "thesis"],
+                "courses": ["/courses/", "/curriculum/", "/syllabus/"],
+                "faculty": ["/faculty/", "/staff/", "/people/", "/directory/"],
+                "student_organizations": ["/student-organizations/", "/clubs/", "/societies/"],
+                "achievements": ["/news/", "/achievements/", "/awards/"],
+                "concentrations": ["/programs/", "/degrees/", "/majors/", "/concentrations/"],
+                "events": ["/events/", "/calendar/", "/schedule/"],
+                "facilities": ["/facilities/", "/labs/", "/resources/"]
+            }
+
+            # Check URL patterns first
+            for category, patterns in url_patterns.items():
+                for pattern in patterns:
+                    if pattern in url:
                         self.categories[category].append(section)
                         categorized = True
                         break
-
                 if categorized:
                     break
 
-            # If not categorized, add to general info
+            # If not categorized by URL, check keywords
+            if not categorized:
+                for category, keywords in self.category_keywords.items():
+                    for keyword in keywords:
+                        if keyword.lower() in combined_text:
+                            self.categories[category].append(section)
+                            categorized = True
+                            break
+
+                    if categorized:
+                        break
+
+            # If still not categorized, add to general info
             if not categorized:
                 self.categories["general_info"].append(section)
     

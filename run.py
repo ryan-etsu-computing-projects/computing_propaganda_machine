@@ -43,6 +43,8 @@ def main():
                         help='Maximum number of pages to crawl')
     parser.add_argument('--max-depth', type=int, default=1,
                         help='Maximum depth to crawl (1 = only links on start page)')
+    parser.add_argument('--path-prefix', type=str, default='/cbat/computing',
+                        help='Only crawl URLs with this path prefix')
     parser.add_argument('--skip-crawl', action='store_true',
                         help='Skip crawling and use existing raw content file')
     
@@ -65,7 +67,8 @@ def main():
                 "--output", raw_content_file,
                 "--delay", str(args.delay),
                 "--max-pages", str(args.max_pages),
-                "--max-depth", str(args.max_depth)
+                "--max-depth", str(args.max_depth),
+                "--path-prefix", args.path_prefix
             ],
             "Crawling website content"
         )
