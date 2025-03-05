@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="55" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#003366">ETSU Computing Career Outcomes</text>
+  
+  <!-- Career Paths -->
+  <rect x="100" y="95" width="600" height="60" rx="10" fill="#ffc72c" />
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="black">Technology Career Pathways for ETSU Computing Graduates</text>
+  
+  <!-- Career Columns -->
+  <!-- Software Development -->
+  <rect x="100" y="160" width="180" height="40" rx="8" fill="#fcd66e" />
+  <text x="190" y="185" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="black">Software Development</text>
+  
+  <rect x="100" y="205" width="180" height="180" rx="8" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="190" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Software Engineer</text>
+  <text x="190" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Full-Stack Developer</text>
+  <text x="190" y="285" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Mobile App Developer</text>
+  <text x="190" y="315" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">DevOps Engineer</text>
+  <text x="190" y="345" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Software Architect</text>
+  <text x="190" y="375" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="middle">$70,000 - $140,000+</text>
+  
+  <!-- Data & AI -->
+  <rect x="310" y="160" width="180" height="40" rx="8" fill="#fcd66e" />
+  <text x="400" y="185" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="black">Data &amp; AI</text>
+  
+  <rect x="310" y="205" width="180" height="180" rx="8" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="400" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Data Scientist</text>
+  <text x="400" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Machine Learning Engineer</text>
+  <text x="400" y="285" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Business Intelligence Analyst</text>
+  <text x="400" y="315" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Data Engineer</text>
+  <text x="400" y="345" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">AI Researcher</text>
+  <text x="400" y="375" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="middle">$75,000 - $150,000+</text>
+  
+  <!-- Cybersecurity -->
+  <rect x="520" y="160" width="180" height="40" rx="8" fill="#fcd66e" />
+  <text x="610" y="185" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="black">Cybersecurity</text>
+  
+  <rect x="520" y="205" width="180" height="180" rx="8" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="610" y="225" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Security Analyst</text>
+  <text x="610" y="255" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Penetration Tester</text>
+  <text x="610" y="285" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Security Engineer</text>
+  <text x="610" y="315" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Cybersecurity Consultant</text>
+  <text x="610" y="345" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">CISO</text>
+  <text x="610" y="375" font-family="Arial, sans-serif" font-size="12" font-style="italic" text-anchor="middle">$80,000 - $160,000+</text>
+  
+  <!-- Top Employers -->
+  <rect x="100" y="400" width="600" height="40" rx="8" fill="#003366" />
+  <text x="400" y="425" font-family="Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="white">Top Employers of ETSU Computing Graduates</text>
+  
+  <!-- Employer categories -->
+  <rect x="100" y="445" width="180" height="50" rx="8" fill="#f0f0f0" stroke="#00529B" stroke-width="2" />
+  <text x="190" y="465" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Technology Companies</text>
+  <text x="190" y="485" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Google, Microsoft, IBM</text>
+  
+  <rect x="310" y="445" width="180" height="50" rx="8" fill="#f0f0f0" stroke="#00529B" stroke-width="2" />
+  <text x="400" y="465" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Healthcare</text>
+  <text x="400" y="485" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">BlueCross BlueShield, HCA</text>
+  
+  <rect x="520" y="445" width="180" height="50" rx="8" fill="#f0f0f0" stroke="#00529B" stroke-width="2" />
+  <text x="610" y="465" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Government &amp; Finance</text>
+  <text x="610" y="485" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Federal Agencies, Banks</text>
+</svg>

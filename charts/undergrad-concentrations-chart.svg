@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 500">
+  <!-- Background -->
+  <rect width="950" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#003366">ETSU Computing Undergraduate Concentrations</text>
+  
+  <!-- Column headers -->
+  <text x="220" y="70" font-family="Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#003366">Computer Science</text>
+  <text x="400" y="70" font-family="Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#003366">Information Systems</text>
+  <text x="590" y="70" font-family="Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#003366">Information Technology</text>
+  <text x="760" y="70" font-family="Arial, sans-serif" font-size="17" font-weight="bold" text-anchor="middle" fill="#003366">Cybersecurity</text>
+  
+  <!-- ABET badges -->
+  <rect x="165" y="80" width="120" height="25" rx="12" fill="#00529B" />
+  <text x="225" y="97" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">ABET Accredited</text>
+  
+  <rect x="345" y="80" width="120" height="25" rx="12" fill="#00529B" />
+  <text x="405" y="97" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">ABET Accredited</text>
+  
+  <rect x="525" y="80" width="120" height="25" rx="12" fill="#00529B" />
+  <text x="585" y="97" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">ABET Accredited</text>
+
+  <rect x="705" y="80" width="120" height="25" rx="12" fill="#00529B" />
+  <text x="765" y="97" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">ABET Accredited</text>
+  
+  <!-- Row 1: Focus -->
+  <rect x="20" y="120" width="100" height="30" rx="5" fill="#ffc72c" />
+  <text x="70" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="black">Focus</text>
+  
+  <rect x="150" y="120" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="225" y="140" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Software Development</text>
+  <text x="225" y="160" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Algorithms</text>
+  <text x="225" y="180" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Theoretical CS</text>
+  
+  <rect x="330" y="120" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="405" y="140" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Business Applications</text>
+  <text x="405" y="160" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Database Systems</text>
+  <text x="405" y="180" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Enterprise Systems</text>
+  
+  <rect x="510" y="120" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="585" y="140" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Tech Infrastructure</text>
+  <text x="585" y="160" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">System Integration</text>
+  <text x="585" y="180" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Practical Implementation</text>
+  
+  <!-- Row 2: Key Courses -->
+  <rect x="20" y="220" width="100" height="30" rx="5" fill="#ffc72c" />
+  <text x="70" y="240" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="black">Key Courses</text>
+  
+  <rect x="150" y="220" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="225" y="240" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Data Structures</text>
+  <text x="225" y="260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Computer Organization</text>
+  <text x="225" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Algorithms</text>
+  
+  <rect x="330" y="220" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="405" y="240" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Database Design</text>
+  <text x="405" y="260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">IS Implementation</text>
+  <text x="405" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Enterprise Programming</text>
+  
+  <rect x="510" y="220" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="585" y="240" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Networking</text>
+  <text x="585" y="260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Information Security</text>
+  <text x="585" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">System Administration</text>
+  
+  <!-- Row 3: Career Paths -->
+  <rect x="20" y="320" width="100" height="30" rx="5" fill="#ffc72c" />
+  <text x="70" y="340" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="black">Career Paths</text>
+  
+  <rect x="150" y="320" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="225" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Software Engineer</text>
+  <text x="225" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Systems Analyst</text>
+  <text x="225" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Research Scientist</text>
+  
+  <rect x="330" y="320" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="405" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Business Analyst</text>
+  <text x="405" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Database Administrator</text>
+  <text x="405" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Systems Analyst</text>
+  
+  <rect x="510" y="320" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="585" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">IT Specialist</text>
+  <text x="585" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Network Administrator</text>
+  <text x="585" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Systems Engineer</text>
+  
+  <!-- Cybersecurity Column (positioned rightmost, extending out of frame but data included) -->
+  <rect x="690" y="120" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="765" y="140" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Network Security</text>
+  <text x="765" y="160" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Cybersecurity Operations</text>
+  <text x="765" y="180" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Threat Assessment</text>
+  
+  <rect x="690" y="220" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="765" y="240" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Network Security</text>
+  <text x="765" y="260" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Ethical Hacking</text>
+  <text x="765" y="280" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Computer Forensics</text>
+  
+  <rect x="690" y="320" width="150" height="80" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="765" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Security Analyst</text>
+  <text x="765" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Network Security Specialist</text>
+  <text x="765" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Penetration Tester</text>
+  
+  <!-- Footer -->
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="14" font-style="italic" text-anchor="middle">ETSU Computing offers ABET-accredited programs designed to prepare you for in-demand technology careers</text>
+  <text x="400" y="480" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#003366">www.etsu.edu/computing</text>
+</svg>

@@ -1,0 +1,56 @@
+flowchart TD
+    classDef titleBox fill:#003366,stroke:#00529B,color:white,font-size:x-large,stroke-width:2px
+    classDef mainProgram fill:#00529b,stroke:#00529B,color:white,stroke-width:2px
+    classDef concentration fill:#ffc72c,stroke:#ffc72c,color:black,stroke-width:2px
+    classDef career fill:#f5f5f5,stroke:#00529B,color:black,stroke-width:2px
+    classDef certificate fill:#f5f5f5,stroke:#ffc72c,color:black,stroke-width:2px,stroke-dasharray: 5 5
+    classDef noteBox text-align:left,line-height:2.1,padding: 0px,font-size:small,font-weight:bold,color:#c2e1fc,stroke:#c2e1fc,stroke-width:2px
+    
+    title["ETSU Computing Graduate Programs"]:::titleBox
+    
+    %% Computer Science Section
+    MSCS["M.S. Computer Science"]:::mainProgram
+    title --> MSCS
+    
+    CSTheory["Theory & Practice"]:::concentration
+    AIML["AI & Machine Learning"]:::concentration
+    SoftEng["Software Engineering"]:::concentration
+    
+    MSCS --> CSTheory & AIML & SoftEng
+    
+    SysArch["Systems Architect<br>Research Scientist"]:::career
+    DataSci["Data Scientist<br>ML Engineer"]:::career
+    SoftArch["Software Architect<br>Dev Team Lead"]:::career
+    
+    CSTheory --> SysArch
+    AIML --> DataSci
+    SoftEng --> SoftArch
+    
+    %% Information Systems Section
+    MSIS["M.S. Information Systems"]:::mainProgram
+    title --> MSIS
+    
+    CyberMgmt["Cybersecurity<br>Management"]:::concentration
+    DataAnalytics["Data<br>Analytics"]:::concentration
+    InfoMgmt["Information<br>Management"]:::concentration
+    UXEng["UX<br>Engineering"]:::concentration
+    
+    MSIS --> CyberMgmt & DataAnalytics & InfoMgmt & UXEng
+    
+    SecConsult["Security Consultant<br>CISO"]:::career
+    DataAnalyst["Data Analyst<br>BI Specialist"]:::career
+    InfoMgr["Information Manager<br>Systems Analyst"]:::career
+    UXDesign["UX Designer<br>UX Researcher"]:::career
+    
+    CyberMgmt --> SecConsult
+    DataAnalytics --> DataAnalyst
+    InfoMgmt --> InfoMgr
+    UXEng --> UXDesign
+    
+    %% Certificate
+    GradCert["Graduate Certificate in Data Analytics"]:::certificate
+    GradCert -.-> MSIS
+
+
+    %% Footer note
+    note["◘ Evening & Online Options<br>◘ 33 credit hours<br>◘ Industry-Relevant Curriculum"]:::noteBox

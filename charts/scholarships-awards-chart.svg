@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#003366">ETSU Computing Scholarships and Financial Support</text>
+  
+  <!-- Main container -->
+  <rect x="100" y="70" width="600" height="80" rx="10" fill="#003366" />
+  <text x="400" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Exceptional Financial Support for Students</text>
+  <text x="400" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="white">Multiple funding sources available to make your education affordable</text>
+  
+  <!-- Undergraduate Scholarships -->
+  <rect x="100" y="170" width="280" height="40" rx="5" fill="#ffc72c" />
+  <text x="240" y="195" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="black">Undergraduate Scholarships</text>
+  
+  <!-- Undergrad Scholarship types -->
+  <rect x="100" y="210" width="280" height="90" rx="5" fill="#f5f5f5" stroke="#00529B" stroke-width="2" />
+  
+  <text x="115" y="230" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="start">Honors In Discipline</text>
+  <text x="140" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Full tuition waiver</text>
+  <text x="140" y="270" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Based on academic achievement</text>
+  <text x="140" y="290" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Renewable for qualifying students</text>
+  
+  <rect x="100" y="300" width="280" height="90" rx="5" fill="#f5f5f5" stroke="#00529B" stroke-width="2" />
+  
+  <text x="115" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="start">STEM Community Outreach</text>
+  <text x="140" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Waive out-of-state tuition</text>
+  <text x="140" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• For new out-of-state and</text>
+  <text x="140" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="start">  international students</text>
+  
+  <rect x="100" y="390" width="280" height="90" rx="5" fill="#f5f5f5" stroke="#00529B" stroke-width="2" />
+  
+  <text x="115" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="start">Transfer Student Scholarships</text>
+  <text x="140" y="430" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Available for students with 3.0+ GPA</text>
+  <text x="140" y="450" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Helps make transition to ETSU</text>
+  <text x="140" y="470" font-family="Arial, sans-serif" font-size="12" text-anchor="start">  affordable</text>
+  
+  <!-- Graduate Financial Support -->
+  <rect x="420" y="170" width="280" height="40" rx="5" fill="#ffc72c" />
+  <text x="560" y="195" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="black">Graduate Financial Support</text>
+  
+  <!-- Graduate Support types -->
+  <rect x="420" y="210" width="280" height="90" rx="5" fill="#f5f5f5" stroke="#00529B" stroke-width="2" />
+  
+  <text x="435" y="230" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="start">Graduate Assistantships</text>
+  <text x="460" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Teaching positions</text>
+  <text x="460" y="270" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Research positions</text>
+  <text x="460" y="290" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• For full-time graduate students</text>
+  
+  <rect x="420" y="300" width="280" height="90" rx="5" fill="#f5f5f5" stroke="#00529B" stroke-width="2" />
+  
+  <text x="435" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="start">Graduate Tuition Scholarships</text>
+  <text x="460" y="340" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Merit-based awards</text>
+  <text x="460" y="360" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Partial and full tuition waivers</text>
+  <text x="460" y="380" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Based on academic performance</text>
+  
+  <rect x="420" y="390" width="280" height="90" rx="5" fill="#f5f5f5" stroke="#00529B" stroke-width="2" />
+  
+  <text x="435" y="410" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="start">Additional Support</text>
+  <text x="460" y="430" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• College of Business and Technology</text>
+  <text x="460" y="450" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• ETSU Honors College</text>
+  <text x="460" y="470" font-family="Arial, sans-serif" font-size="12" text-anchor="start">• Department of Computing</text>
+  
+  <!-- Icon representations -->
+  <!-- Dollar Sign Icon for Honors -->
+  <circle cx="400" cy="252" r="15" fill="#ffc72c" />
+  <text x="400" y="261" font-family="Arial, sans-serif" font-size="25" font-weight="bold" text-anchor="middle" fill="black">$</text>
+  
+  <!-- Globe Icon for International -->
+  <text x="400" y="351" font-family="Arial, sans-serif" font-size="25" font-weight="bold" text-anchor="middle" fill="black">🌐</text>
+  
+  <!-- Handshake Icon for Transfer -->
+    <circle cx="400" cy="431" r="15" fill="#00529b" />
+  <text x="400" y="441" font-family="Arial, sans-serif" font-size="25" font-weight="bold" text-anchor="middle" fill="black">🤝</text>
+</svg>

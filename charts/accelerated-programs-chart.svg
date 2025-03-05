@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430">
+  <!-- Background -->
+  <rect width="800" height="430" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#003366">ETSU Computing Accelerated Programs Timeline</text>
+  
+  <!-- Legend -->
+  <rect x="600" y="70" width="20" height="20" fill="#00529B" rx="3" />
+  <text x="630" y="85" font-family="Arial, sans-serif" font-size="14" text-anchor="start">Traditional Path</text>
+  <rect x="600" y="100" width="20" height="20" fill="#ffc72c" rx="3" />
+  <text x="630" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="start">Accelerated Path</text>
+  
+  <!-- Traditional Path Timeline -->
+  <text x="120" y="135" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="start" fill="black">Traditional Path</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="170" x2="700" y2="170" stroke="#00529B" stroke-width="4" />
+  
+  <!-- Timeline markers -->
+  <circle cx="150" cy="170" r="8" fill="#00529B" />
+  <circle cx="275" cy="170" r="8" fill="#00529B" />
+  <circle cx="400" cy="170" r="8" fill="#00529B" />
+  <circle cx="525" cy="170" r="8" fill="#00529B" />
+  <circle cx="650" cy="170" r="8" fill="#00529B" />
+  
+  <!-- Timeline labels -->
+  <text x="150" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 1</text>
+  <text x="275" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 2</text>
+  <text x="400" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 3</text>
+  <text x="525" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 4</text>
+  <text x="650" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 5+</text>
+  
+  <!-- Timeline descriptions -->
+  <rect x="125" y="180" width="175" height="30" rx="5" fill="#f0f0f0" stroke="#00529B" stroke-width="2" />
+  <text x="212" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Lower Division</text>
+  
+  <rect x="325" y="180" width="175" height="30" rx="5" fill="#f0f0f0" stroke="#00529B" stroke-width="2" />
+  <text x="412" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Upper Division</text>
+  
+  <rect x="525" y="180" width="175" height="30" rx="5" fill="#f0f0f0" stroke="#00529B" stroke-width="2" />
+  <text x="612" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Graduate Courses</text>
+  
+  <!-- Accelerated BS to MS Path -->
+  <text x="120" y="255" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="start" fill="black">Accelerated BS to MS Path</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="290" x2="700" y2="290" stroke="#ffc72c" stroke-width="4" />
+  
+  <!-- Timeline markers -->
+  <circle cx="150" cy="290" r="8" fill="#ffc72c" />
+  <circle cx="275" cy="290" r="8" fill="#ffc72c" />
+  <circle cx="400" cy="290" r="8" fill="#ffc72c" />
+  <circle cx="525" cy="290" r="8" fill="#ffc72c" />
+  <circle cx="600" cy="290" r="8" fill="#ffc72c" />
+  
+  <!-- Timeline labels -->
+  <text x="150" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 1</text>
+  <text x="275" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 2</text>
+  <text x="400" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 3</text>
+  <text x="525" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 4</text>
+  <text x="600" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Year 4.5</text>
+  
+  <!-- Timeline descriptions -->
+  <rect x="125" y="300" width="175" height="30" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="212" y="320" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Lower Division</text>
+  
+  <rect x="325" y="300" width="175" height="30" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="412" y="320" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Upper Division</text>
+  
+  <!-- Overlapping graduate courses -->
+  <rect x="425" y="335" width="175" height="30" rx="5" fill="#f0f0f0" stroke="#ffc72c" stroke-width="2" />
+  <text x="512" y="355" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Graduate Courses</text>
+  
+  <!-- Savings callout -->
+  <rect x="70" y="380" width="660" height="30" rx="5" fill="#fcd66e" />
+  <text x="400" y="400" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="black">Save time and money with up to 12 credits of graduate coursework at undergraduate rates!</text>
+</svg>
